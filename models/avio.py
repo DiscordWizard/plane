@@ -5,5 +5,5 @@ class avio(models.Model):
     imatge = fields.Char('Imatge')
     marca = fields.Integer('Marca')
     model = fields.Char('Model')
-    maxVel = fields.Double('MaxVel')
+    maxVel = fields.Float('MaxVel')
     
