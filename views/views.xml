@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- accions que es poden executar -->
+        <record model="ir.actions.act_window" id="action_zoo_tree">
+            <field name="name">Zoo</field>
+            <field name="res_model">zoo</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_animal_tree">
+            <field name="name">Animal</field>
+            <field name="res_model">animal</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_especie_tree">
+            <field name="name">Especie</field>
+            <field name="res_model">especie</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    <!-- menus dels mòdul -->
+        <menuitem name="Tot" icon="" id="zoo_menu1" />
+        <menuitem name="Zoo" parent="zoo_menu1" id="zoo_menu2" action="action_zoo_tree" />
+        <menuitem name="Animal" parent="zoo_menu1" id="zoo_menu3" action="action_animal_tree" />
+        <menuitem name="Especie" parent="zoo_menu1" id="zoo_menu4" action="action_especie_tree" />
+    <!-- vista en arbre -->
+        <record model="ir.ui.view" id="view_zoo_tree">
+            <field name="name">zoo_view_tree</field>
+            <field name="model">zoo</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Zoo">
+                    <field name="id"/>
+                    <field name="grandaria"/>
+                    <field name="nom"/>
+                    <field name="ciutat"/>
+                    <field name="pais"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_animal_tree">
+            <field name="name">animal_view_tree</field>
+            <field name="model">animal</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Tasca">
+                    <field name="id"/>
+                    <field name="continentOrigen"/>
+                    <field name="paisOrigen"/>
+                    <field name="dataNaix"/>
+                    <field name="sexe"/>
+                    <field name="idZoo"/>
+                    <field name="idEspecie"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_especie_tree">
+            <field name="name">especie_view_tree</field>
+            <field name="model">especie</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Tasca">
+                    <field name="id"/>
+                    <field name="perill"/>
+                    <field name="nomVulgar"/>
+                    <field name="nomCientific"/>
+                    <field name="familia"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
