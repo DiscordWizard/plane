@@ -2,72 +2,100 @@
 <odoo>
     <data>
     <!-- accions que es poden executar -->
-        <record model="ir.actions.act_window" id="action_zoo_tree">
-            <field name="name">Zoo</field>
-            <field name="res_model">zoo</field>
+        <record model="ir.actions.act_window" id="action_aeroport_tree">
+            <field name="name">Aeroport</field>
+            <field name="res_model">aeroport</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <record model="ir.actions.act_window" id="action_animal_tree">
-            <field name="name">Animal</field>
-            <field name="res_model">animal</field>
+        <record model="ir.actions.act_window" id="action_avio_tree">
+            <field name="name">Avio</field>
+            <field name="res_model">avio</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <record model="ir.actions.act_window" id="action_especie_tree">
-            <field name="name">Especie</field>
-            <field name="res_model">especie</field>
+        <record model="ir.actions.act_window" id="action_pilot_tree">
+            <field name="name">Pilot</field>
+            <field name="res_model">pilot</field>
             <field name="view_mode">tree,form</field>
         </record>
+
+        <record model="ir.actions.act_window" id="action_vol_tree">
+            <field name="name">Vol</field>
+            <field name="res_model">vol</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
     <!-- menus dels mòdul -->
-        <menuitem name="Tot" icon="" id="zoo_menu1" />
-        <menuitem name="Zoo" parent="zoo_menu1" id="zoo_menu2" action="action_zoo_tree" />
-        <menuitem name="Animal" parent="zoo_menu1" id="zoo_menu3" action="action_animal_tree" />
-        <menuitem name="Especie" parent="zoo_menu1" id="zoo_menu4" action="action_especie_tree" />
+        <menuitem name="Tot" icon="" id="vol_menu1" />
+        <menuitem name="Aeroport" parent="vol_menu1" id="vol_menu2" action="action_aeroport_tree" />
+        <menuitem name="Avio" parent="vol_menu1" id="vol_menu3" action="action_avio_tree" />
+        <menuitem name="Pilot" parent="vol_menu1" id="vol_menu4" action="action_pilot_tree" />
+        <menuitem name="Vol" parent="vol_menu1" id="vol_menu5" action="action_vol_tree" />
+
     <!-- vista en arbre -->
-        <record model="ir.ui.view" id="view_zoo_tree">
-            <field name="name">zoo_view_tree</field>
-            <field name="model">zoo</field>
+        <record model="ir.ui.view" id="view_aeroport_tree">
+            <field name="name">aeroport_view_tree</field>
+            <field name="model">aeroport</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Zoo">
-                    <field name="id"/>
-                    <field name="grandaria"/>
+                <tree string="Aeroport">
+                    <field name="codi"/>
                     <field name="nom"/>
+                    <field name="imatge"/>
                     <field name="ciutat"/>
                     <field name="pais"/>
+                    <field name="latitud"/>
+                    <field name="longitud"/>
                 </tree>
             </field>
         </record>
 
-        <record model="ir.ui.view" id="view_animal_tree">
-            <field name="name">animal_view_tree</field>
-            <field name="model">animal</field>
+        <record model="ir.ui.view" id="view_vol_tree">
+            <field name="name">vol_view_tree</field>
+            <field name="model">vol</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Tasca">
-                    <field name="id"/>
-                    <field name="continentOrigen"/>
-                    <field name="paisOrigen"/>
-                    <field name="dataNaix"/>
-                    <field name="sexe"/>
-                    <field name="idZoo"/>
-                    <field name="idEspecie"/>
+                <tree string="Vol">
+                    <field name="codi"/>
+                    <field name="passatgers"/>
+                    <field name="dataSortida"/>
+                    <field name="dataArrivada"/>
+                    <field name="desti"/>
+                    <field name="origen"/>
+                    <field name="pilot"/>
+                    <field name="avio"/>
                 </tree>
             </field>
         </record>
 
-        <record model="ir.ui.view" id="view_especie_tree">
-            <field name="name">especie_view_tree</field>
-            <field name="model">especie</field>
+        <record model="ir.ui.view" id="view_pilot_tree">
+            <field name="name">pilot_view_tree</field>
+            <field name="model">pilot</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Tasca">
-                    <field name="id"/>
-                    <field name="perill"/>
-                    <field name="nomVulgar"/>
-                    <field name="nomCientific"/>
-                    <field name="familia"/>
+                <tree string="Pilot">
+                    <field name="codi"/>
+                    <field name="nom"/>
+                    <field name="cognoms"/>
+                    <field name="nif"/>
+                    <field name="telf"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_avio_tree">
+            <field name="name">avio_view_tree</field>
+            <field name="model">avio</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Avio">
+                    <field name="codi"/>
+                    <field name="imatge"/>
+                    <field name="marca"/>
+                    <field name="model"/>
+                    <field name="maxVel"/>
                 </tree>
             </field>
         </record>
