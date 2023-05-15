@@ -7,5 +7,5 @@ class vol(models.Model):
     dataArrivada = fields.Date('DataArrivada')
     desti = fields.Many2one('aeroport',string='Desti')
     origen = fields.Many2one('aeroport',string='Origen')
-    pilot = fields.Many2one('avio',string='Pilot')
+    pilot = fields.Many2one('pilot',string='Pilot')
     avio = fields.Many2one('avio',string='Avio')
