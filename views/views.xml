@@ -27,7 +27,7 @@
         </record>
 
     <!-- menus dels mòdul -->
-        <menuitem name="Tot" icon="" id="vol_menu1" />
+        <menuitem name="Plane" icon="" id="vol_menu1" />
         <menuitem name="Aeroport" parent="vol_menu1" id="vol_menu2" action="action_aeroport_tree" />
         <menuitem name="Avio" parent="vol_menu1" id="vol_menu3" action="action_avio_tree" />
         <menuitem name="Pilot" parent="vol_menu1" id="vol_menu4" action="action_pilot_tree" />
