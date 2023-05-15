@@ -6,7 +6,7 @@ class aeroport(models.Model):
     imatge = fields.Binary('Imatge')
     ciutat = fields.Char('Ciutat')
     pais = fields.Char('Pais')
-    latitud = fields.Float('id', string="Latitud")
-    longitud = fields.Float('id', string="Longitud")
+    latitud = fields.Float('latitud', string="Latitud")
+    longitud = fields.Float('longitud', string="Longitud")
 
     
